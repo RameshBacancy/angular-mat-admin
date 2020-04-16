@@ -42,57 +42,6 @@ export const ROUTES: RouteInfo[] = [{
             {path: 'typography', title: 'Typography', ab:'T'}
         ]
     },{
-        path: '/forms',
-        title: 'Forms',
-        type: 'sub',
-        icontype: 'content_paste',
-        collapse: 'forms',
-        children: [
-            {path: 'regular', title: 'Regular Forms', ab:'RF'},
-            {path: 'extended', title: 'Extended Forms', ab:'EF'},
-            {path: 'validation', title: 'Validation Forms', ab:'VF'},
-            {path: 'wizard', title: 'Wizard', ab:'W'}
-        ]
-    },{
-        path: '/tables',
-        title: 'Tables',
-        type: 'sub',
-        icontype: 'grid_on',
-        collapse: 'tables',
-        children: [
-            {path: 'regular', title: 'Regular Tables', ab:'RT'},
-            {path: 'extended', title: 'Extended Tables', ab:'ET'},
-            {path: 'datatables.net', title: 'Datatables.net', ab:'DT'}
-        ]
-    },{
-        path: '/maps',
-        title: 'Maps',
-        type: 'sub',
-        icontype: 'place',
-        collapse: 'maps',
-        children: [
-            {path: 'google', title: 'Google Maps', ab:'GM'},
-            {path: 'fullscreen', title: 'Full Screen Map', ab:'FSM'},
-            {path: 'vector', title: 'Vector Map', ab:'VM'}
-        ]
-    },{
-        path: '/widgets',
-        title: 'Widgets',
-        type: 'link',
-        icontype: 'widgets'
-
-    },{
-        path: '/charts',
-        title: 'Charts',
-        type: 'link',
-        icontype: 'timeline'
-
-    },{
-        path: '/calendar',
-        title: 'Calendar',
-        type: 'link',
-        icontype: 'date_range'
-    },{
         path: '/pages',
         title: 'Pages',
         type: 'sub',
