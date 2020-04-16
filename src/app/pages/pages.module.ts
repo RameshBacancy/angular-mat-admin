@@ -6,11 +6,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 // import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { PagesRoutes } from './pages.routing';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
-import { RegisterComponent } from './register/register.component';
-import { PricingComponent } from './pricing/pricing.component';
-import { LockComponent } from './lock/lock.component';
-import { LoginComponent } from './login/login.component';
+// import { DashboardModule } from './dashboard/dashboard.module';
 
 @NgModule({
   imports: [
@@ -19,13 +17,9 @@ import { LoginComponent } from './login/login.component';
     FormsModule,
     MaterialModule,
     ReactiveFormsModule
+    // DashboardModule
   ],
-  declarations: [
-    LoginComponent,
-    RegisterComponent,
-    PricingComponent,
-    LockComponent
-  ]
+  declarations: [DashboardComponent]
 })
 
 export class PagesModule {}

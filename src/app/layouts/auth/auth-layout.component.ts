@@ -15,7 +15,7 @@ export class AuthLayoutComponent implements OnInit {
   constructor(private router: Router, private element: ElementRef) {
       this.sidebarVisible = false;
   }
-  ngOnInit(){
+  ngOnInit() {
     const navbar: HTMLElement = this.element.nativeElement;
 
     this.toggleButton = navbar.getElementsByClassName('navbar-toggler')[0];
@@ -28,10 +28,10 @@ export class AuthLayoutComponent implements OnInit {
     });
   }
   sidebarOpen() {
-    var $toggle = document.getElementsByClassName('navbar-toggler')[0];
+    const $toggle = document.getElementsByClassName('navbar-toggler')[0];
       const toggleButton = this.toggleButton;
       const body = document.getElementsByTagName('body')[0];
-      setTimeout(function(){
+      setTimeout(function() {
           toggleButton.classList.add('toggled');
       }, 500);
       body.classList.add('nav-open');
@@ -39,13 +39,13 @@ export class AuthLayoutComponent implements OnInit {
           $toggle.classList.add('toggled');
       }, 430);
 
-      var $layer = document.createElement('div');
+      const $layer = document.createElement('div');
       $layer.setAttribute('class', 'close-layer');
 
 
       if (body.querySelectorAll('.wrapper-full-page')) {
           document.getElementsByClassName('wrapper-full-page')[0].appendChild($layer);
-      }else if (body.classList.contains('off-canvas-sidebar')) {
+      } else if (body.classList.contains('off-canvas-sidebar')) {
           document.getElementsByClassName('wrapper-full-page')[0].appendChild($layer);
       }
 
@@ -53,7 +53,7 @@ export class AuthLayoutComponent implements OnInit {
           $layer.classList.add('visible');
       }, 100);
 
-      $layer.onclick = function() { //asign a function
+      $layer.onclick = function() { // assign a function
         body.classList.remove('nav-open');
         this.mobile_menu_visible = 0;
         this.sidebarVisible = false;
@@ -68,12 +68,12 @@ export class AuthLayoutComponent implements OnInit {
       body.classList.add('nav-open');
       this.mobile_menu_visible = 1;
       this.sidebarVisible = true;
-  };
+  }
   sidebarClose() {
-    var $toggle = document.getElementsByClassName('navbar-toggler')[0];
+    const $toggle = document.getElementsByClassName('navbar-toggler')[0];
       const body = document.getElementsByTagName('body')[0];
       this.toggleButton.classList.remove('toggled');
-      var $layer = document.createElement('div');
+      const $layer = document.createElement('div');
       $layer.setAttribute('class', 'close-layer');
 
       this.sidebarVisible = false;
@@ -89,7 +89,7 @@ export class AuthLayoutComponent implements OnInit {
       }, 400);
 
       this.mobile_menu_visible = 0;
-  };
+  }
   sidebarToggle() {
       if (this.sidebarVisible === false) {
           this.sidebarOpen();
