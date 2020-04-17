@@ -21,41 +21,30 @@ export interface ChildrenItems {
 }
 
 //Menu Items
-export const ROUTES: RouteInfo[] = [{
-        path: '/dashboard',
-        title: 'Dashboard',
-        type: 'link',
-        icontype: 'dashboard'
-    },{
-        path: '/components',
-        title: 'Components',
-        type: 'sub',
-        icontype: 'apps',
-        collapse: 'components',
-        children: [
-            {path: 'buttons', title: 'Buttons', ab:'B'},
-            {path: 'grid', title: 'Grid System', ab:'GS'},
-            {path: 'panels', title: 'Panels', ab:'P'},
-            {path: 'sweet-alert', title: 'Sweet Alert', ab:'SA'},
-            {path: 'notifications', title: 'Notifications', ab:'N'},
-            {path: 'icons', title: 'Icons', ab:'I'},
-            {path: 'typography', title: 'Typography', ab:'T'}
-        ]
-    },{
+export const ROUTES: RouteInfo[] = [
+    {
         path: '/pages',
         title: 'Pages',
         type: 'sub',
         icontype: 'image',
         collapse: 'pages',
         children: [
-            {path: 'pricing', title: 'Pricing', ab:'P'},
-            {path: 'timeline', title: 'Timeline Page', ab:'TP'},
-            {path: 'login', title: 'Login Page', ab:'LP'},
-            {path: 'register', title: 'Register Page', ab:'RP'},
-            {path: 'lock', title: 'Lock Screen Page', ab:'LSP'},
-            {path: 'user', title: 'User Page', ab:'UP'}
+            { path: 'dashboard', title: 'Dashboard', ab: 'D' },
+            { path: 'timeline', title: 'Timeline Page', ab: 'TP' },
+            { path: 'user', title: 'User Page', ab: 'UP' }
         ]
-    }
+    },
+    {
+        path: '/menu',
+        title: 'Menu',
+        type: 'sub',
+        icontype: 'content_paste',
+        collapse: 'menu',
+        children: [
+            {path: 'demo1', title: 'Demo 1', ab:'D1'},
+            {path: 'demo2', title: 'Demo 2', ab:'D2'},
+        ]
+    },
 ];
 @Component({
     selector: 'app-sidebar-cmp',
@@ -79,7 +68,7 @@ export class SidebarComponent implements OnInit {
             this.ps = new PerfectScrollbar(elemSidebar);
         }
     }
-    updatePS(): void  {
+    updatePS(): void {
         if (window.matchMedia(`(min-width: 960px)`).matches && !this.isMac()) {
             this.ps.update();
         }

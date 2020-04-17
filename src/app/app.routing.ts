@@ -6,7 +6,7 @@ import { AuthLayoutComponent } from './layouts/auth/auth-layout.component';
 export const AppRoutes: Routes = [
     {
         path: '',
-        redirectTo: 'dashboard',
+        redirectTo: 'pages/dashboard',
         pathMatch: 'full',
     },
     {
@@ -14,23 +14,25 @@ export const AppRoutes: Routes = [
         component: AdminLayoutComponent,
         children: [
             {
-                path: '',
-                loadChildren: './dashboard/dashboard.module#DashboardModule'
+                path: 'pages',
+                loadChildren: './pages/pages.module#PagesModule'
             },
             {
-                path: 'components',
-                loadChildren: './components/components.module#ComponentsModule'
+                path: 'menu',
+                loadChildren: './pages/menu/menu.module#MenuModule'
             },
         ]
     },
     {
-        path: '',
-        component: AuthLayoutComponent,
-        children: [
-            {
-                path: 'pages',
-                loadChildren: './pages/pages.module#PagesModule'
-            },
-        ]
-    }
+        path: 'login',
+        loadChildren: './authentication/login/login.module#LoginModule'
+    },
+    {
+        path: 'registration',
+        loadChildren: './authentication/registration/registration.module#RegistrationModule'
+    },
+    {
+        path: '**',
+        redirectTo: 'pages/dashboard',
+    },
 ];

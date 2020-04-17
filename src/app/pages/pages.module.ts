@@ -7,10 +7,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { PagesRoutes } from './pages.routing';
 
-import { RegisterComponent } from './register/register.component';
-import { PricingComponent } from './pricing/pricing.component';
-import { LockComponent } from './lock/lock.component';
-import { LoginComponent } from './login/login.component';
 import { UserComponent } from './userpage/user.component';
 import { TimelineComponent } from './timeline/timeline.component';
 
@@ -23,10 +19,6 @@ import { TimelineComponent } from './timeline/timeline.component';
     ReactiveFormsModule
   ],
   declarations: [
-    LoginComponent,
-    RegisterComponent,
-    PricingComponent,
-    LockComponent,
     UserComponent,
     TimelineComponent,
   ]
