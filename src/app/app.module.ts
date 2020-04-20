@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
-import { APP_BASE_HREF } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 
@@ -11,7 +10,6 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatDatepickerModule } from '@angular/material/datepicker';
-import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatSelectModule } from '@angular/material/select';
 import { MatSliderModule } from '@angular/material/slider';
@@ -40,12 +38,10 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 
 import { AppComponent } from './app.component';
 
-import { SidebarModule } from './sidebar/sidebar.module';
+import { SidebarModule } from './shared/sidebar/sidebar.module';
 import { FooterModule } from './shared/footer/footer.module';
 import { NavbarModule } from './shared/navbar/navbar.module';
 import { FixedpluginModule } from './shared/fixedplugin/fixedplugin.module';
-import { AdminLayoutComponent } from './layouts/admin/admin-layout.component';
-import { AuthLayoutComponent } from './layouts/auth/auth-layout.component';
 
 import { AppRoutes } from './app.routing';
 
@@ -103,8 +99,6 @@ export class MaterialModule { }
   ],
   declarations: [
     AppComponent,
-    AdminLayoutComponent,
-    AuthLayoutComponent
   ],
   providers: [
     MatNativeDateModule

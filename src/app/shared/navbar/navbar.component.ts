@@ -1,5 +1,5 @@
 import { Component, OnInit, Renderer2, ViewChild, ElementRef, Directive } from '@angular/core';
-import { ROUTES } from '../.././sidebar/sidebar.component';
+import { ROUTES } from '../.././shared/sidebar/sidebar.component';
 import { Router, ActivatedRoute, NavigationEnd, NavigationStart } from '@angular/router';
 import { Subscription } from 'rxjs/Subscription';
 import { Location, LocationStrategy, PathLocationStrategy } from '@angular/common';
