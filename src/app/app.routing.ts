@@ -17,19 +17,11 @@ export const AppRoutes: Routes = [
                 path: 'pages',
                 loadChildren: './pages/pages.module#PagesModule'
             },
-            {
-                path: 'menu',
-                loadChildren: './pages/menu/menu.module#MenuModule'
-            },
         ]
     },
     {
-        path: 'login',
-        loadChildren: './authentication/login/login.module#LoginModule'
-    },
-    {
-        path: 'registration',
-        loadChildren: './authentication/registration/registration.module#RegistrationModule'
+        path: '',
+        loadChildren: './authentication/authentication.module#AuthenticationModule'
     },
     {
         path: '**',

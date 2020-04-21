@@ -8,6 +8,7 @@ declare var $: any;
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit, OnDestroy {
+
   test: Date = new Date();
   private toggleButton: any;
   private sidebarVisible: boolean;

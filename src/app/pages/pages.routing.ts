@@ -4,7 +4,6 @@ import { UserComponent } from './userpage/user.component';
 import { TimelineComponent } from './timeline/timeline.component';
 
 export const PagesRoutes: Routes = [
-
     {
         path: '',
         children: [
@@ -19,6 +18,10 @@ export const PagesRoutes: Routes = [
             {
                 path: 'timeline',
                 component: TimelineComponent
+            },
+            {
+                path: 'menu',
+                loadChildren: './menu/menu.module#MenuModule'
             },
         ]
     }

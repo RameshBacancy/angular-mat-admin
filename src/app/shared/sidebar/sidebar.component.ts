@@ -23,26 +23,26 @@ export interface ChildrenItems {
 //Menu Items
 export const ROUTES: RouteInfo[] = [
     {
-        path: '/pages',
-        title: 'Pages',
-        type: 'sub',
-        icontype: 'image',
-        collapse: 'pages',
-        children: [
-            { path: 'dashboard', title: 'Dashboard', ab: 'D' },
-            { path: 'timeline', title: 'Timeline Page', ab: 'TP' },
-            { path: 'user', title: 'User Page', ab: 'UP' }
-        ]
+        path: '/pages/dashboard',
+        title: 'Dashboard',
+        type: 'link',
+        icontype: 'dashboard'
     },
     {
-        path: '/menu',
+        path: '/pages/user',
+        title: 'User',
+        type: 'link',
+        icontype: 'account_box'
+    },
+    {
+        path: '/pages/menu',
         title: 'Menu',
         type: 'sub',
         icontype: 'content_paste',
         collapse: 'menu',
         children: [
-            {path: 'demo1', title: 'Demo 1', ab:'D1'},
-            {path: 'demo2', title: 'Demo 2', ab:'D2'},
+            { path: 'demo1', title: 'Demo 1', ab: 'D1' },
+            { path: 'demo2', title: 'Demo 2', ab: 'D2' },
         ]
     },
 ];

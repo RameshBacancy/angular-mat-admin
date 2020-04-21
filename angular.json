@@ -33,8 +33,7 @@
               "node_modules/bootstrap-material-design/dist/js/bootstrap-material-design.min.js",
               "node_modules/hammerjs/hammer.min.js",
               "node_modules/nouislider/distribute/nouislider.min.js",
-              "node_modules/jasny-bootstrap/dist/js/jasny-bootstrap.min.js",
-              "node_modules/perfect-scrollbar/dist/perfect-scrollbar.min.js",
+              "node_modules/perfect-scrollbar/dist/perfect-scrollbar.min.js"
             ],
             "stylePreprocessorOptions": {
               "includePaths": [
@@ -97,8 +96,7 @@
               "node_modules/bootstrap-material-design/dist/js/bootstrap-material-design.min.js",
               "node_modules/hammerjs/hammer.min.js",
               "node_modules/nouislider/distribute/nouislider.min.js",
-              "node_modules/jasny-bootstrap/dist/js/jasny-bootstrap.min.js",
-              "node_modules/perfect-scrollbar/dist/perfect-scrollbar.min.js",
+              "node_modules/perfect-scrollbar/dist/perfect-scrollbar.min.js"
             ],
             "assets": [
               "src/favicon.ico",

@@ -6,6 +6,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
   styleUrls: ['./registration.component.css']
 })
 export class RegistrationComponent implements OnInit, OnDestroy {
+
   test: Date = new Date();
   ngOnInit() {
     const body = document.getElementsByTagName('body')[0];

@@ -33,6 +33,9 @@ import { AuthLayoutComponent } from './layouts/auth/auth-layout.component';
     TimelineComponent,
     AdminLayoutComponent,
     AuthLayoutComponent
+  ],
+  exports:[
+    AuthLayoutComponent
   ]
 })
 
