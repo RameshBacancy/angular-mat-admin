@@ -11,85 +11,138 @@
               <small class="category">Complete your profile</small>
             </h4>
           </div>
+
           <div class="card-body">
-            <form>
+            <form [formGroup]="userDetailsFG" (submit)="userDetailsSubmit()">
               <div class="row">
-                <div class="col-md-5">
+                <div class="col-md-4">
                   <div class="form-group">
                     <label class="bmd-label-floating">Company (disabled)</label>
                     <input type="text" class="form-control" disabled>
                   </div>
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-4">
                   <div class="form-group">
                     <label class="bmd-label-floating">Username</label>
-                    <input type="text" class="form-control">
+                    <input type="text" class="form-control" [formControl]="userDetailsFG.get('userName')">
+                    <span class="text-danger"
+                      *ngIf="userDetailsFG.get('userName').invalid && (userDetailsFG.get('userName').dirty || userDetailsFG.get('userName').touched)">Please
+                      enter username.</span>
                   </div>
                 </div>
                 <div class="col-md-4">
                   <div class="form-group">
                     <label class="bmd-label-floating">Email address</label>
-                    <input type="email" class="form-control">
+                    <input type="email" class="form-control" [formControl]="userDetailsFG.get('email')">
+                    <span class="text-danger"
+                      *ngIf="userDetailsFG.get('email').invalid && (userDetailsFG.get('email').dirty || userDetailsFG.get('email').touched)">Please
+                      enter email.</span>
                   </div>
                 </div>
               </div>
+
               <div class="row">
                 <div class="col-md-6">
                   <div class="form-group">
-                    <label class="bmd-label-floating">Fist Name</label>
-                    <input type="text" class="form-control">
+                    <label class="bmd-label-floating">First Name</label>
+                    <input type="text" class="form-control" [formControl]="userDetailsFG.get('firstName')">
+                    <span class="text-danger"
+                      *ngIf="userDetailsFG.get('firstName').invalid && (userDetailsFG.get('firstName').dirty || userDetailsFG.get('firstName').touched)">Please
+                      enter firstname.</span>
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="form-group">
                     <label class="bmd-label-floating">Last Name</label>
-                    <input type="text" class="form-control">
+                    <input type="text" class="form-control" [formControl]="userDetailsFG.get('lastName')">
+                    <span class="text-danger"
+                      *ngIf="userDetailsFG.get('lastName').invalid && (userDetailsFG.get('lastName').dirty || userDetailsFG.get('lastName').touched)">Please
+                      enter lastname.</span>
                   </div>
                 </div>
               </div>
+
               <div class="row">
                 <div class="col-md-12">
                   <div class="form-group">
-                    <label class="bmd-label-floating">Adress</label>
-                    <input type="text" class="form-control">
+                    <label class="bmd-label-floating">Address</label>
+                    <input type="text" class="form-control" [formControl]="userDetailsFG.get('address')">
+                    <span class="text-danger"
+                      *ngIf="userDetailsFG.get('address').invalid && (userDetailsFG.get('address').dirty || userDetailsFG.get('address').touched)">Please
+                      enter address.</span>
                   </div>
                 </div>
               </div>
+
+              <div class="row">
+                <ng-container *ngFor="let city of cityArray">
+                  <div class="col-md-4">
+                    <div class="input-group mb-3">
+                      <div class="input-group-prepend">
+                        <div class="input-group-text">
+                          <input type="checkbox" (change)="checkboxSelected($event, city.value)">
+                        </div>
+                      </div>
+                      <input type="text" value="{{city.name}}" disabled="true" class="form-control">
+                    </div>
+                  </div>
+                </ng-container>
+              </div>
+
               <div class="row">
                 <div class="col-md-4">
-                  <div class="form-group">
-                    <label class="bmd-label-floating">City</label>
-                    <input type="text" class="form-control">
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <div class="input-group-text">
+                        <input type="radio" value="male" [formControl]="userDetailsFG.get('gender')"
+                          (change)="radioSelected($event)">
+                      </div>
+                    </div>
+                    <input type="text" value="Male" disabled="true" class="form-control">
                   </div>
                 </div>
                 <div class="col-md-4">
-                  <div class="form-group">
-                    <label class="bmd-label-floating">Country</label>
-                    <input type="text" class="form-control">
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <div class="input-group-text">
+                        <input type="radio" value="female" [formControl]="userDetailsFG.get('gender')"
+                          (change)="radioSelected($event)">
+                      </div>
+                    </div>
+                    <input type="text" value="Female" disabled="true" class="form-control">
                   </div>
                 </div>
                 <div class="col-md-4">
-                  <div class="form-group">
-                    <label class="bmd-label-floating">Postal Code</label>
-                    <input type="text" class="form-control">
+                  <div class="dropdown">
+                    <button class="btn btn-secondary w-100" type="button" id="dropdownMenuButton"
+                      data-toggle="dropdown">{{companyNameListDropdown}}</button>
+                    <div class="dropdown-menu w-100" aria-labelledby="dropdownMenuButton">
+                      <ng-container *ngFor="let company of companyNameList">
+                        <option class="dropdown-item" (click)="optionCall(company)" value="{{company.value}}">
+                          {{company.name}}</option>
+                      </ng-container>
+                    </div>
                   </div>
                 </div>
               </div>
+
               <div class="row">
                 <div class="col-md-12">
                   <div class="form-group">
                     <label>About Me</label>
                     <div class="form-group">
-                      <label class="bmd-label-floating"> Lamborghini Mercy, Your chick she so thirsty, I'm in that two seat Lambo.</label>
-                      <textarea class="form-control" rows="5"></textarea>
+                      <label class="bmd-label-floating">Let us know about your self.</label>
+                      <textarea class="form-control" [formControl]="userDetailsFG.get('aboutMe')" rows="5"></textarea>
                     </div>
                   </div>
                 </div>
               </div>
+
               <button mat-raised-button type="submit" class="btn btn-rose pull-right">Update Profile</button>
               <div class="clearfix"></div>
             </form>
           </div>
+
         </div>
       </div>
       <div class="col-md-4">
@@ -103,7 +156,8 @@
             <h6 class="card-category text-gray">CEO / Co-Founder</h6>
             <h4 class="card-title">Alec Thompson</h4>
             <p class="card-description">
-              Don't be scared of the truth because we need to restart the human foundation in truth And I love you like Kanye loves Kanye I love Rick Owens’ bed design but the back is...
+              Don't be scared of the truth because we need to restart the human foundation in truth And I love you like
+              Kanye loves Kanye I love Rick Owens’ bed design but the back is...
             </p>
             <a href="#pablo" class="btn btn-rose btn-round">Follow</a>
           </div>
