@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import PerfectScrollbar from 'perfect-scrollbar';
 
-// Metadata
 export interface RouteInfo {
     path: string;
     title: string;
@@ -18,7 +17,6 @@ export interface ChildrenItems {
     type?: string;
 }
 
-// Menu Items
 export const ROUTES: RouteInfo[] = [
     {
         path: '/pages/dashboard',

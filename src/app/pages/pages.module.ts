@@ -7,7 +7,6 @@ import { NavbarModule } from '../shared/navbar/navbar.module';
 import { SidebarModule } from '../shared/sidebar/sidebar.module';
 import { FixedpluginModule } from '../shared/fixedplugin/fixedplugin.module';
 import { FooterModule } from '../shared/footer/footer.module';
-// import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { PagesRoutes } from './pages.routing';
 
