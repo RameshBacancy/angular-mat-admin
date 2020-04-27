@@ -34,7 +34,7 @@ import { AuthLayoutComponent } from './layouts/auth/auth-layout.component';
     AdminLayoutComponent,
     AuthLayoutComponent
   ],
-  exports:[
+  exports: [
     AuthLayoutComponent
   ]
 })

@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import PerfectScrollbar from 'perfect-scrollbar';
 
-
-//Metadata
+// Metadata
 export interface RouteInfo {
     path: string;
     title: string;
@@ -19,7 +18,7 @@ export interface ChildrenItems {
     type?: string;
 }
 
-//Menu Items
+// Menu Items
 export const ROUTES: RouteInfo[] = [
     {
         path: '/pages/dashboard',
@@ -58,7 +57,7 @@ export class SidebarComponent implements OnInit {
             return false;
         }
         return true;
-    };
+    }
 
     ngOnInit() {
         this.menuItems = ROUTES.filter(menuItem => menuItem);

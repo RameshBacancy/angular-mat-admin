@@ -11,9 +11,9 @@ export class UserComponent implements OnInit {
     public companyNameListDropdown = 'Select Company name';
     public cityList = [];
     public companyNameList = [
-        { name: 'Bacancy', value: "Bacancy" },
-        { name: 'Google', value: "Google" },
-        { name: 'Apple', value: "Apple" },
+        { name: 'Bacancy', value: 'Bacancy' },
+        { name: 'Google', value: 'Google' },
+        { name: 'Apple', value: 'Apple' },
     ];
 
     public cityArray = [
@@ -59,8 +59,8 @@ export class UserComponent implements OnInit {
                 ...this.userDetailsFG.value,
                 cityList: this.cityList,
                 companyName: this.companyNameListDropdown
-            }
-            console.log('inside user details submit', data)
+            };
+            console.log('inside user details submit', data);
         }
     }
 

@@ -44,8 +44,6 @@ export class FixedpluginComponent implements OnInit {
           if ($(this).hasClass('switch-trigger')) {
               if (event.stopPropagation) {
                   event.stopPropagation();
-              } else if (window.event) {
-                 window.event.cancelBubble = true;
               }
           }
       });
@@ -98,7 +96,7 @@ export class FixedpluginComponent implements OnInit {
           if ($full_page_background.length !== 0 && $('.switch-sidebar-image input:checked').length !== 0 ) {
               const new_image_full_page = $('.fixed-plugin li.active .img-holder').find('img').data('src');
 
-              $full_page_background.fadeOut('fast', function(){
+              $full_page_background.fadeOut('fast', function() {
                  $full_page_background.css('background-image', 'url("' + new_image_full_page + '")');
                  $full_page_background.fadeIn('fast');
               });
@@ -148,7 +146,7 @@ export class FixedpluginComponent implements OnInit {
           }
       });
 
-      $('.switch-sidebar-mini input').change(function(){
+      $('.switch-sidebar-mini input').change(function() {
           const $body = $('body');
 
           const $input = $(this);
@@ -158,7 +156,7 @@ export class FixedpluginComponent implements OnInit {
               md.misc.sidebar_mini_active = false;
 
           } else {
-              setTimeout(function(){
+              setTimeout(function() {
                   $('body').addClass('sidebar-mini');
 
                   $('.sidebar .collapse').css('height', 'auto');
@@ -167,12 +165,12 @@ export class FixedpluginComponent implements OnInit {
           }
 
           // we simulate the window Resize so the charts will get updated in realtime.
-          const simulateWindowResize = setInterval(function(){
+          const simulateWindowResize = setInterval(function() {
               window.dispatchEvent(new Event('resize'));
           }, 180);
 
           // we stop the simulation of Window Resize after the animations are completed
-          setTimeout(function(){
+          setTimeout(function() {
               clearInterval(simulateWindowResize);
           }, 1000);
 

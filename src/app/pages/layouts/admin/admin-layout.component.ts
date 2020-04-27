@@ -35,15 +35,16 @@ export class AdminLayoutComponent implements OnInit, AfterViewInit {
     });
     this.router.events.subscribe((event: any) => {
       if (event instanceof NavigationStart) {
-        if (event.url != this.lastPoppedUrl)
+        if (event.url !== this.lastPoppedUrl) {
           this.yScrollStack.push(window.scrollY);
+        }
       } else if (event instanceof NavigationEnd) {
-        if (event.url == this.lastPoppedUrl) {
+        if (event.url === this.lastPoppedUrl) {
           this.lastPoppedUrl = undefined;
           window.scrollTo(0, this.yScrollStack.pop());
-        }
-        else
+        } else {
           window.scrollTo(0, 0);
+        }
       }
     });
     this._router = this.router.events.filter(event => event instanceof NavigationEnd).subscribe((event: NavigationEnd) => {
@@ -55,8 +56,7 @@ export class AdminLayoutComponent implements OnInit, AfterViewInit {
       let ps = new PerfectScrollbar(elemMainPanel);
       ps = new PerfectScrollbar(elemSidebar);
       html.classList.add('perfect-scrollbar-on');
-    }
-    else {
+    } else {
       html.classList.add('perfect-scrollbar-off');
     }
     this._router = this.router.events.filter(event => event instanceof NavigationEnd).subscribe((event: NavigationEnd) => {

@@ -20,7 +20,7 @@ export class LoginComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
-    var navbar: HTMLElement = this.element.nativeElement;
+    const navbar: HTMLElement = this.element.nativeElement;
     this.toggleButton = navbar.getElementsByClassName('navbar-toggle')[0];
     const body = document.getElementsByTagName('body')[0];
     body.classList.add('login-page');
@@ -32,10 +32,10 @@ export class LoginComponent implements OnInit, OnDestroy {
     }, 700);
   }
   sidebarToggle() {
-    var toggleButton = this.toggleButton;
-    var body = document.getElementsByTagName('body')[0];
-    var sidebar = document.getElementsByClassName('navbar-collapse')[0];
-    if (this.sidebarVisible == false) {
+    const toggleButton = this.toggleButton;
+    const body = document.getElementsByTagName('body')[0];
+    const sidebar = document.getElementsByClassName('navbar-collapse')[0];
+    if (this.sidebarVisible === false) {
       setTimeout(function () {
         toggleButton.classList.add('toggled');
       }, 500);
