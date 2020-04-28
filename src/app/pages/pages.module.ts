@@ -3,14 +3,17 @@ import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { MaterialModule } from '../app.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-// import { FlexLayoutModule } from '@angular/flex-layout';
+import { NavbarModule } from '../shared/navbar/navbar.module';
+import { SidebarModule } from '../shared/sidebar/sidebar.module';
+import { FixedpluginModule } from '../shared/fixedplugin/fixedplugin.module';
+import { FooterModule } from '../shared/footer/footer.module';
 
 import { PagesRoutes } from './pages.routing';
 
-import { RegisterComponent } from './register/register.component';
-import { PricingComponent } from './pricing/pricing.component';
-import { LockComponent } from './lock/lock.component';
-import { LoginComponent } from './login/login.component';
+import { UserComponent } from './userpage/user.component';
+import { TimelineComponent } from './timeline/timeline.component';
+import { AdminLayoutComponent } from './layouts/admin/admin-layout.component';
+import { AuthLayoutComponent } from './layouts/auth/auth-layout.component';
 
 @NgModule({
   imports: [
@@ -18,14 +21,21 @@ import { LoginComponent } from './login/login.component';
     RouterModule.forChild(PagesRoutes),
     FormsModule,
     MaterialModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NavbarModule,
+    SidebarModule,
+    FixedpluginModule,
+    FooterModule,
   ],
   declarations: [
-    LoginComponent,
-    RegisterComponent,
-    PricingComponent,
-    LockComponent
+    UserComponent,
+    TimelineComponent,
+    AdminLayoutComponent,
+    AuthLayoutComponent
+  ],
+  exports: [
+    AuthLayoutComponent
   ]
 })
 
-export class PagesModule {}
+export class PagesModule { }
